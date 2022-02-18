@@ -10,7 +10,9 @@ class Wordle:
     def __init__(self, guess_dictionary: list, game_dictionary=None) -> None:
         # TODO: consider making dictionary a dict to improve performance
         self.guess_dictionary = guess_dictionary
-        self.game_words = game_dictionary if game_dictionary is not None else guess_dictionary
+        self.game_words = (
+            game_dictionary if game_dictionary is not None else guess_dictionary
+        )
         self.game_word = random.choice(self.game_words).lower()
         self.word_len = len(self.game_word)
         self.max_guesses = self.determine_guess_count()
@@ -52,16 +54,17 @@ class Wordle:
         check if game is over
         """
         # add word to board
-        self.board[self.current_guess_count] = ''.join([letter.upper() + ' ' for letter in guess])
+        self.board[self.current_guess_count] = "".join(
+            [letter.upper() + " " for letter in guess]
+        )
         # update guess count and guessed words list
         self.current_guess_count += 1
         self.guessed_words.append(guess)
         return
 
     def display_board(self):
-        """use blessings module to display board with color hints
-        """
-        print(f"Game word is: {self.game_word}")  #TODO: remove after dev is complete
+        """use blessings module to display board with color hints"""
+        print(f"Game word is: {self.game_word}")  # TODO: remove after dev is complete
         print(*self.board, sep="\n")
         print()
         pass
@@ -81,13 +84,15 @@ class Wordle:
             self.update_board(guess)
 
             # check if game is over
-            if self.current_guess_count == self.max_guesses or guess.lower() == self.game_word:
+            if (
+                self.current_guess_count == self.max_guesses
+                or guess.lower() == self.game_word
+            ):
                 self.is_game_over = True
-        
+
         if self.game_word in self.guessed_words:
             print("You won :)")
         else:
             print("You lost :(")
 
-            
         return
