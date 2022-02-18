@@ -1,8 +1,5 @@
 # wordle.py --------------
-import json
-from mimetypes import guess_all_extensions
 import random
-from unittest.util import sorted_list_difference
 import blessings
 
 
