@@ -1,10 +1,7 @@
 # app.py ----------------
 
 import json
-import curses
-import time
 from wordle import Wordle
-import random
 
 
 def main():
@@ -14,7 +11,7 @@ def main():
     while True:
         try:
             # wl = input(word_length_prompt)
-            wl = '5'
+            wl = "5"
             if 5 <= int(wl) <= 10:
                 break
             else:
@@ -23,21 +20,18 @@ def main():
             print(f"Invalid entry: {wl}")
             print("Value must be an integer between 5 and 10 inclusive")
 
-    # initialize word bank
-    with open("words_of_length.json", 'r') as f:
-        word_bank = json.load(f)[wl]
-    print(len(word_bank))
-    
+    # initialize dictionary
+    with open("word_files/wordle_dictionary.txt", 'r') as f:
+        wordle_dict = [x for x in f.read().split()]
+    # with open("words_of_length.json", "r") as f:
+    #     word_bank = json.load(f)[wl]
+    # print(len(word_bank))
 
     # initialize wordle object
-    game = Wordle(word_bank=word_bank, word_len=int(wl))
-    
+    game = Wordle(dictionary=wordle_dict, word_len=int(wl))
+
     # start game
     game.play_game()
-
-
-
-
 
     return
 
