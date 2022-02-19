@@ -28,6 +28,7 @@ def main():
         game_dict = [x for x in f.read().split()]
 
     # initialize wordle object
+    # game = Wordle(guess_dictionary=guess_dict, game_dictionary=['tiger'])#]game_dict)
     game = Wordle(guess_dictionary=guess_dict, game_dictionary=game_dict)
 
     # start game
