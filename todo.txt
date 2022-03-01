@@ -1,0 +1,17 @@
+# PyWordle
+
+Todo:
+- fix logic for letter coloring (error example: when game word is tiger, but guess is speed)
+- use github actions for commit hooks and testing
+
+issues:
+- the board doesn't reprint on the last guess
+- can't quit in middle of game
+- handling guessing the same word twice
+- letter coloring is off (word is tiger and guess is speed, the first e should be gray, not yellow)
+
+bonuses
+- hard mode?
+- add time per guess? or a general game timer
+- track game data and display analytics
+- 
