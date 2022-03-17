@@ -21,10 +21,10 @@ def main():
     # initialize dictionaries
     # with open("word_files/wordle_guess_dictionary.txt", 'r') as f:
     #     guess_dict = [x for x in f.read().split()]
-    with open("../word_files/words_of_length.json", "r") as f:
+    with open("word_files/words_of_length.json", "r") as f:
         guess_dict = json.load(f)["5"]
 
-    with open("../word_files/wordle_game_dictionary.txt", "r") as f:
+    with open("word_files/wordle_game_dictionary.txt", "r") as f:
         game_dict = [x for x in f.read().split()]
 
     # initialize wordle object
