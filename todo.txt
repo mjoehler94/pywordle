@@ -5,9 +5,6 @@ Todo:
 - use github actions for commit hooks and testing
 
 issues:
-- the board doesn't reprint on the last guess
-- can't quit in middle of game
-- handling guessing the same word twice
 - letter coloring is off (word is tiger and guess is speed, the first e should be gray, not yellow)
 
 bonuses
